@@ -3,12 +3,12 @@ pipeline{
     stages{
         stage("Build Jar"){
             steps{
-                sh './mvnw clean install -Dcheckstyle.skip=true -Dmaven.test.skip=true'
+                sh 'cd syft-grype && ./mvnw clean install -Dcheckstyle.skip=true -Dmaven.test.skip=true'
             }
         }
         stage("Build Container"){
             steps{
-                sh 'docker build -t app:${BUILD_NUMBER} .'
+                sh 'docker build --build-arg JAR_FILE=syft-grype/target/syft-grype-0.0.1-SNAPSHOT.jar -t app:${BUILD_NUMBER} .'
             }
         }
         stage("Generate Software Bill of Materials (sbom) with Syft"){
