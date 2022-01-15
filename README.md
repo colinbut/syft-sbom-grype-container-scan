@@ -2,7 +2,7 @@
 
 This example showcases how to integrate software bill of materials (sbom) generation tooling and container vulnerability scanning tooling into a Jenkins Pipeline.
 
-In this particular example I am just simply installing the tools (syft and grype) on the instance running Jenkins and then execute the CLI tool command passing in the container image to analyse with each being in a separate pipeline stage.
+In this particular example I am just simply installing the tools ([syft](https://github.com/anchore/syft) and [grype](https://github.com/anchore/grype)) on the instance running Jenkins and then execute the CLI tool command passing in the container image to analyse with each being in a separate pipeline stage.
 
 For example:
 
