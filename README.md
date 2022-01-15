@@ -20,7 +20,7 @@ stage("Generate Software Bill of Materials (sbom) with Syft"){
 }
 ```
 
-## Container Vulnerability Scanning with Grype
+## Container Vulnerability Scanning with Grype
 
 ```groovy
 stage("Generate vulnerability listing with Grype") {
